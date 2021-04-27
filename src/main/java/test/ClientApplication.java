@@ -47,7 +47,6 @@ public class ClientApplication {
 
         try {
             rsocketClient.requestStream(DefaultPayload.create(data, metadata))
-                    .take(10)
                     .doOnEach(f -> {
                         Person person = mapPerson(f.get().getDataUtf8());
                         System.out.println(person);
